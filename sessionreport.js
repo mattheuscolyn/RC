@@ -93,24 +93,44 @@ function concatenateReport() {
     studentname = toTitleCase(studentname);
     var profname = document.getElementById("profname").value;
     profname = toTitleCase(profname);
-    var coursedepartment = document.getElementById("coursedepartment").value;
-    coursedepartment = toTitleCase(coursedepartment);
+    var course = document.getElementById("course").value;
+    course = toTitleCase(course);
     var consultantname = document.getElementById("consultantname").value;
     consultantname = toTitleCase(consultantname);
-    var coursenumber = document.getElementById("coursenumber").value;
-    var papertopic = document.getElementById("papertopic").value;
+    var papertopic = " on " + document.getElementById("papertopic").value;
     var namelist = studentname.split(" ");
-    var bodytext = getBody(studentPronouns[0], studentPronouns[1], studentPronouns[2])
-    document.getElementById("sessionreport").value = "Rhetoric Center Session Report: " + studentname + "\n"
-    + "Student Name: " + studentname + "\n"
-    + "Professor: " + profname + "\n" 
-    + "Session Date: " + getFormattedDate() + "\n" 
-    + "Class: " + coursedepartment + " " + coursenumber + "\n\n"
-    + "Session Report:\n"
-    + namelist[0] + " came in to work on " + studentPronouns[2] + " paper on " + papertopic + "." + bodytext + "\n\n"
-    + "Consultant Name: " + consultantname + "\n"
-    + "Consultant Email: " + generateEmail(consultantname) + "\n\n"
-    + "Please email rhetoric@calvin.edu with any questions.\n\n"
-    + "Thank you,\n"
-    + consultantname + ", Rhetoric Center Consultant";
+    var bodytext = getBody(studentPronouns[0], studentPronouns[1], studentPronouns[2]);
+    var error_message = "";
+    if (document.getElementById("studentname").value == "") {
+        error_message += "No value given for STUDENT NAME. "
+    };
+    if (document.getElementById("profname").value == "") {
+        error_message += "No value given for PROF NAME. "
+    };
+    if (document.getElementById("course").value == "") {
+        error_message += "No value given for COURSE. "
+    };
+    if (document.getElementById("consultantname").value == "") {
+        error_message += "No value given for CONSULTANT NAME. "
+    };
+    if (document.getElementById("papertopic").value == "") {
+        error_message += "No value given for PAPER TOPIC. "
+    };
+    if (error_message.length > 0) {
+        alert(error_message)
+    } else {
+        document.getElementById("sessionreport").value = "Rhetoric Center Session Report: " + studentname + "\n"
+        + "Student Name: " + studentname + "\n"
+        + "Professor: " + profname + "\n" 
+        + "Session Date: " + getFormattedDate() + "\n" 
+        + "Class: " + course + "\n\n"
+        + "Session Report:\n"
+        + namelist[0] + " came in to work on " + studentPronouns[2] + " paper" + papertopic + " for " + course + "." 
+        + bodytext + "\n\n"
+        + "Consultant Name: " + consultantname + "\n"
+        + "Consultant Email: " + generateEmail(consultantname) + "\n\n"
+        + "Please email rhetoric@calvin.edu with any questions.\n\n"
+        + "Thank you,\n"
+        + consultantname + ", Rhetoric Center Consultant"
+    };
 }
