@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <link rel="stylesheet" href="sessionreport.css">
+    <meta charset="utf-8">
+    <title>RC Session Report Generator</title>
+    <script src="sessionreport.js"></script>
+  </head>
+  <body>
+    <h1>Rhetoric Center Session Report Generator</h1>
+    
+
+    <div class="box">
+        <form action="/action_page.php" id="form" autocomplete="on">
+            <label for="sname">Student's name:</label>
+            <input type="text" id="studentname" name="studentname"><br><br>
+            <label for="sgender">Student's gender:</label><br>
+            <input type="radio" id="studentgender" name="studentgender" value="male" checked="checked">
+            <label for="male">Male</label><br>
+            <input type="radio" id="studentgender" name="studentgender" value="female">
+            <label for="female">Female</label><br>
+            <input type="radio" id="studentgender" name="studentgender" value="nb">
+            <label for="nb">Non-Binary</label><br><br>
+            <label for="profname">Professor's name:</label>
+            <input type="text" id="profname" name="profname"><br><br>
+            <label for="coursedepartment">Course Department:</label>
+            <input type="text" id="coursedepartment" name="coursedepartment"><br><br>
+            <label for="coursenumber">Course Number:</label>
+            <input type="text" id="coursenumber" name="coursenumber"><br><br>
+            <label for="consultantname">Consultant Name:</label>
+            <input type="text" id="consultantname" name="consultantname"><br><br>
+            <label for="papertopic">Paper Topic:</label>
+            <input type="text" id="papertopic" name="papertopic"><br><br>
+        </form>
+        <form>
+          <label for="reportbody">What did you talk about?</label><br>
+          <input type="checkbox" id="reportbody_basicgrammar" name="reportbody" value="basicgrammar">
+          <label for="reportbody_basicgrammar">Basic Grammar</label><br>
+          <input type="checkbox" id="reportbody" name="reportbody" value="structure">
+          <label for="reportbody_structure">Structure</label><br>
+          <input type="checkbox" id="reportbody" name="reportbody"><br>
+          <input type="checkbox" id="reportbody" name="reportbody"><br>
+          <input type="checkbox" id="reportbody" name="reportbody"><br>
+          <input type="checkbox" id="reportbody" name="reportbody"><br>
+          <input type="checkbox" id="reportbody" name="reportbody"><br>
+          <input type="checkbox" id="reportbody" name="reportbody"><br>
+        </form>
+        <textarea id="sessionreport" name="sessionreport"></textarea>
+    </div>
+    <button type="button" onclick="concatenateReport()">Generate session report</button>
+            
+  </body>
+</html>
