@@ -4,12 +4,54 @@
     left:0px;
 }
 
+h1 {
+    color: white;
+    border: 3px;
+    border-color: black;
+    border-style: solid;
+    padding: 1em;
+    background: black;
+  }
+
 .box {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-gap: 10px 2em;
+    background: white;
   }
   
-  .box :first-child {
-      align-self: center;
+.box :first-child {
+    align-self: center;
+}
+
+div {
+    width: 800px;
+    border: 15px solid black;
+    padding: 50px;
+    margin: 20px;
+    content: solid white;
+}
+
+body {
+    background-image: url('double-bubble-outline.png');
+    font-family: din-condensed, sans-serif;
+  }
+
+.button {
+    background-color: white;
+    border: 3px;
+    border-style: solid;
+    border-color: black;
+    color: black;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.button:hover {
+    background-color: black;
+    color: white;
   }
