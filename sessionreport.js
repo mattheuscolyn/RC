@@ -5,25 +5,9 @@ function toTitleCase(str) {
 }
 
 function generateEmail(name) {
-    var email_list = ["mwc7", "hav9", "ijj3", "jmk67", "ktd5", "kjv239", "mar44", "srm26", "tl35"];
+    var email_list = ["mwc7"];
     if (toTitleCase(name) == "Mattheus Colyn") {
         var email = email_list[0]
-    } else if (toTitleCase(name) == "Harm Venhuizen") {
-        var email = email_list[1]
-    } else if (toTitleCase(name) == "Isabel Johnson") {
-        var email = email_list[2]
-    } else if (toTitleCase(name) == "Jesse Kinyua") {
-        var email = email_list[3]
-    } else if (toTitleCase(name) == "Kate Dehaan") {
-        var email = email_list[4]
-    } else if (toTitleCase(name) == "Katie Vandyke") {
-        var email = email_list[5]
-    } else if (toTitleCase(name) == "Michal Rubingh") {
-        var email = email_list[6]
-    } else if (toTitleCase(name) == "Sophia Morgan") {
-        var email = email_list[7]
-    } else if (toTitleCase(name) == "Tianrong Lin") {
-        var email = email_list[8]
     } else {
         var email = "UNKNOWNEMAIL"
     }
